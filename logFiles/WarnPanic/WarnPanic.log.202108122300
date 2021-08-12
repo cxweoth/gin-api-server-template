@@ -1,0 +1,2 @@
+{"api_service_name":"CXWEO","level":"warning","msg":"read API-Key file failed: open api/.secret/apikey.json: The system cannot find the path specified.","time":"2021-08-12T23:49:23+08:00"}
+{"api_service_name":"CXWEO","level":"warning","msg":"read API-Key file failed: open D:\\PMTLCity_SynologyDrive\\0_Projects\\111_CXWEO_Projects\\0_backend\\github_projects\\gin-api-server-template/api/.secret/apikey.json: The system cannot find the path specified.","time":"2021-08-12T23:56:00+08:00"}

@@ -1,0 +1,124 @@
+definitions:
+  api.AuthFailedResp:
+    properties:
+      error:
+        example: error
+        type: string
+    type: object
+  api.LoginFailed:
+    properties:
+      message:
+        example: msg
+        format: string
+        type: string
+    type: object
+  api.LoginReceiveBody:
+    properties:
+      Account:
+        example: account
+        format: string
+        type: string
+      Password:
+        example: password
+        format: string
+        type: string
+    type: object
+  api.LoginSucceed:
+    properties:
+      token:
+        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50Ijoib3JnYWRtaW4iLCJyb2xlIjoiTWVtYmVyIiwiYXVkIjoib3JnYWRtaW4iLCJleHAiOjE2MjcwMzAzMjcsImp0aSI6Im9yZ2FkbWluMTYyNzAyOTEyNyIsImlhdCI6MTYyNzAyOTEyNywiaXNzIjoiSldUIiwibmJmIjoxNjI3MDI5MTI3LCJzdWIiOiJvcmdhZG1pbiJ9._HlIMv_2_vok5cLjxPNTI2qLUsIZQTtKbpW8UN-C4Tc
+        format: string
+        type: string
+    type: object
+  api.ServiceInfoFailedResp:
+    properties:
+      message:
+        example: msg
+        type: string
+    type: object
+  api.ServiceInfoSuccessResp:
+    properties:
+      serviceName:
+        example: service
+        format: string
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/v1/getServiceInfo:
+    get:
+      consumes:
+      - application/json
+      description: get service info
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get service info by GET method with token
+          schema:
+            $ref: '#/definitions/api.ServiceInfoSuccessResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/api.ServiceInfoFailedResp'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/api.AuthFailedResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/api.ServiceInfoFailedResp'
+      summary: get service info
+      tags:
+      - Service Information
+  /api/v1/login:
+    post:
+      consumes:
+      - application/json
+      description: login and get token
+      parameters:
+      - default: <Add api key here>
+        description: Insert your api key
+        in: header
+        name: X-API-Key
+        required: true
+        type: string
+      - description: Account and Password
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/api.LoginReceiveBody'
+      produces:
+      - application/json
+      - text/plain
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/api.LoginSucceed'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/api.LoginFailed'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/api.AuthFailedResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/api.LoginFailed'
+      summary: Login and return token after authenticate.
+      tags:
+      - AAA
+swagger: "2.0"

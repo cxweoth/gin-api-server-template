@@ -1,0 +1,10 @@
+{"api_service_name":"CXWEO","level":"info","msg":"Run API Server","time":"2021-08-13T00:00:19+08:00"}
+{"api_service_name":"CXWEO","level":"info","msg":"Client User1 try to login account account","time":"2021-08-13T00:00:24+08:00"}
+{"api_service_name":"CXWEO","level":"info","msg":"Client User1 try to login account account auth blockchain CA succeed!","time":"2021-08-13T00:00:24+08:00"}
+{"api_service_name":"CXWEO","level":"info","msg":"Client User1 try to login account account generate token succeed!","time":"2021-08-13T00:00:24+08:00"}
+{"api_service_name":"CXWEO","level":"info","msg":"Client User1 try to login account account and already return token","time":"2021-08-13T00:00:24+08:00"}
+{"api_service_name":"CXWEO","level":"info","msg":"User1 user API-Key authentication succeed","time":"2021-08-13T00:00:24+08:00"}
+{"api_service_name":"CXWEO","level":"info","msg":"account fetch service info","time":"2021-08-13T00:00:37+08:00"}
+{"api_service_name":"CXWEO","level":"info","msg":"Account account API querried succeed ","time":"2021-08-13T00:00:37+08:00"}
+{"api_service_name":"CXWEO","level":"info","msg":"Run API Server","time":"2021-08-13T00:01:11+08:00"}
+{"api_service_name":"CXWEO","level":"info","msg":"Run API Server","time":"2021-08-13T00:03:04+08:00"}
